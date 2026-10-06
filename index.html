@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FERRELECTRICOS J.G.D.</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="top-bar"><span>🚚 Envíos a todo el país</span><span>Atención: +57 300 000 0000</span></div>
+
+<header>
+  <div class="logo">FERRE<span>LECTRICOS</span> <small>J.G.D.</small></div>
+  <div class="search"><input id="searchInput" type="text" placeholder="¿Qué estás buscando?"><button id="searchBtn">🔎 Buscar</button></div>
+  <div class="header-icons">
+    <div class="header-icon"><span>👤</span>Mi cuenta</div>
+    <div class="header-icon" id="ordersBtn"><span>📦</span>Pedidos</div>
+    <div class="header-icon" id="cartBtn"><span>🛒</span>Carrito (<b id="cartCount">0</b>)</div>
+  </div>
+</header>
+
+<nav><ul><li>☰ Categorías</li><li>Inicio</li><li>Productos</li><li>Herramientas</li><li>Material eléctrico</li><li>Ferretería</li><li class="offer">🔥 Ofertas</li></ul></nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Todo para tus proyectos</h1>
+    <p>Encuentra herramientas, materiales eléctricos, productos de ferretería y mucho más. Compra fácil, rápido y seguro.</p>
+    <button class="btn btn-primary" id="viewProducts">Ver productos</button>
+    <button class="btn btn-secondary" id="viewOffers">Ver ofertas</button>
+  </div>
+</section>
+
+<section class="section" id="categoriesSection"><div class="container">
+  <div class="section-title"><h2>Explora nuestras categorías</h2><a href="#" id="allCategories">Ver todas →</a></div>
+  <div class="categories">
+    <div class="category" data-category="Herramientas"><div class="category-image img-tools"></div><h3>🔨 Herramientas</h3></div>
+    <div class="category" data-category="Material eléctrico"><div class="category-image img-electric"></div><h3>⚡ Material eléctrico</h3></div>
+    <div class="category" data-category="Ferretería"><div class="category-image img-hardware"></div><h3>🔩 Ferretería</h3></div>
+    <div class="category" data-category="Equipos"><div class="category-image img-equipment"></div><h3>🧰 Equipos</h3></div>
+    <div class="category" data-category="Seguridad"><div class="category-image img-safety"></div><h3>🦺 Seguridad industrial</h3></div>
+    <div class="category" data-category="Construcción"><div class="category-image img-construction"></div><h3>🏗️ Construcción</h3></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container"><div class="benefits">
+  <div class="benefit"><div class="benefit-icon">🚚</div><div><h3>Envíos rápidos</h3><p>Recibe tus productos directamente en tu dirección.</p></div></div>
+  <div class="benefit"><div class="benefit-icon">🔒</div><div><h3>Compra segura</h3><p>Protegemos tus datos y tus compras.</p></div></div>
+  <div class="benefit"><div class="benefit-icon">💳</div><div><h3>Pagos en línea</h3><p>Diferentes medios de pago disponibles.</p></div></div>
+  <div class="benefit"><div class="benefit-icon">📞</div><div><h3>Atención personalizada</h3><p>Estamos disponibles para ayudarte.</p></div></div>
+</div></div></section>
+
+<section class="section" id="productsSection"><div class="container">
+  <div class="section-title"><h2>Productos destacados</h2><a href="#" id="showAll">Ver catálogo →</a></div>
+  <div class="products" id="products"></div>
+</div></section>
+
+<section class="section" id="cartSection"><div class="container">
+  <div class="section-title"><h2>🛒 Mi carrito</h2></div>
+  <div class="cart" id="cart"></div>
+</div></section>
+
+<section class="section" id="ordersSection"><div class="container">
+  <div class="section-title"><h2>📦 Mis pedidos</h2></div>
+  <div class="order-section" id="orders"></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-title"><h2>⭐ Lo que dicen nuestros clientes</h2></div>
+  <div class="reviews">
+    <div class="review"><div class="review-user"><div class="avatar"></div><div><strong>Carlos Martínez</strong><div class="stars">★★★★★</div></div></div><p>"Encontré fácilmente las herramientas que necesitaba y el pedido llegó en el tiempo indicado."</p></div>
+    <div class="review"><div class="review-user"><div class="avatar"></div><div><strong>Andrea Rodríguez</strong><div class="stars">★★★★★</div></div></div><p>"La página es muy fácil de utilizar. Pude comparar los productos y realizar mi compra sin problemas."</p></div>
+    <div class="review"><div class="review-user"><div class="avatar"></div><div><strong>Juan Pérez</strong><div class="stars">★★★★☆</div></div></div><p>"Muy buena atención y variedad de productos. El seguimiento del pedido fue bastante útil."</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container"><div class="contact">
+  <div class="contact-box"><h2>¿Necesitas ayuda?</h2><p>📞 +57 300 000 0000</p><p>📧 contacto@ferrelectricosjgd.com</p><p>📍 Bogotá D.C., Colombia</p></div>
+  <div class="contact-box"><h2>Contáctanos</h2><input type="text" placeholder="Nombre"><input type="email" placeholder="Correo electrónico"><textarea placeholder="Escribe tu mensaje..."></textarea><button class="btn btn-primary" id="contactBtn">Enviar mensaje</button></div>
+</div></div></section>
+
+<footer><div class="footer-grid"><div><h3>FERRELECTRICOS J.G.D.</h3><p>Soluciones para ferretería, construcción y proyectos eléctricos.</p></div><div><h3>Información</h3><p>Sobre nosotros</p><p>Términos y condiciones</p><p>Política de privacidad</p></div><div><h3>Servicio al cliente</h3><p>Preguntas frecuentes</p><p>Envíos</p><p>Devoluciones</p><p>Seguimiento de pedidos</p></div><div><h3>Síguenos</h3><p>Facebook</p><p>Instagram</p><p>WhatsApp</p></div></div><div class="copyright">© 2026 FERRELECTRICOS J.G.D. Todos los derechos reservados.</div></footer>
+
+<div id="notification"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
