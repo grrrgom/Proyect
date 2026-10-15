@@ -1,86 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FERRELECTRICOS J.G.D.</title>
-<link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FERRELECTRICOS J.G.D: herramientas, materiales de ferretería y productos eléctricos para tu hogar y negocio.">
+  <title>FERRELECTRICOS J.G.D | Ferretería y eléctricos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<div class="top-bar"><span>🚚 Envíos a todo el país</span><span>Atención: +57 300 000 0000</span></div>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-<header>
-  <div class="logo">FERRE<span>LECTRICOS</span> <small>J.G.D.</small></div>
-  <div class="search"><input id="searchInput" type="text" placeholder="¿Qué estás buscando?"><button id="searchBtn">🔎 Buscar</button></div>
-  <div class="header-icons">
-    <div class="header-icon"><span>👤</span>Mi cuenta</div>
-    <div class="header-icon" id="ordersBtn"><span>📦</span>Pedidos</div>
-    <div class="header-icon" id="cartBtn"><span>🛒</span>Carrito (<b id="cartCount">0</b>)</div>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="FERRELECTRICOS J.G.D, ir al inicio">
+        <span class="brand-mark" aria-hidden="true">JGD</span>
+        <span class="brand-text"><strong>FERRELECTRICOS</strong><small>J.G.D · Soluciones para tus proyectos</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
+        <span aria-hidden="true">☰</span><span class="sr-only">Abrir menú</span>
+      </button>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a class="cart-link" href="#carrito">Carrito <span id="cartCount" class="cart-count" aria-label="Productos en el carrito">0</span></a>
+      </nav>
+    </div>
+  </header>
 
-<nav><ul><li>☰ Categorías</li><li>Inicio</li><li>Productos</li><li>Herramientas</li><li>Material eléctrico</li><li>Ferretería</li><li class="offer">🔥 Ofertas</li></ul></nav>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <p class="eyebrow">FERRETERÍA · HERRAMIENTAS · ELÉCTRICOS</p>
+        <h1 id="hero-title">Todo para construir<br><span>grandes ideas.</span></h1>
+        <p>Encuentra herramientas, materiales y productos eléctricos para tus proyectos, reparaciones y trabajos profesionales.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#catalogo">Explorar productos</a>
+          <a class="button button-outline" href="#contacto">Solicitar información</a>
+        </div>
+        <ul class="hero-benefits" aria-label="Beneficios">
+          <li>✓ Atención cercana</li><li>✓ Productos para tus proyectos</li><li>✓ Compra práctica</li>
+        </ul>
+      </div>
+      <div class="hero-decoration" aria-hidden="true"><span>⚡</span><span>🔧</span><span>🛠</span></div>
+    </section>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Todo para tus proyectos</h1>
-    <p>Encuentra herramientas, materiales eléctricos, productos de ferretería y mucho más. Compra fácil, rápido y seguro.</p>
-    <button class="btn btn-primary" id="viewProducts">Ver productos</button>
-    <button class="btn btn-secondary" id="viewOffers">Ver ofertas</button>
-  </div>
-</section>
+    <section class="section container" id="catalogo" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">NUESTRO CATÁLOGO</p><h2 id="catalog-title">Productos destacados</h2></div>
+        <p>Busca lo que necesitas y agrégalo a tu carrito.</p>
+      </div>
+      <div class="catalog-tools">
+        <label class="search-box" for="productSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="productSearch" type="search" placeholder="Buscar productos..." autocomplete="off">
+        </label>
+        <label class="sr-only" for="categoryFilter">Filtrar por categoría</label>
+        <select id="categoryFilter">
+          <option value="todos">Todas las categorías</option>
+          <option value="Herramientas">Herramientas</option>
+          <option value="Eléctricos">Eléctricos</option>
+          <option value="Seguridad">Seguridad</option>
+        </select>
+      </div>
+      <p id="resultsMessage" class="results-message" aria-live="polite">Mostrando productos destacados.</p>
+      <div class="product-grid" id="productGrid">
+        <!-- JavaScript inserta las tarjetas del catálogo aquí. -->
+      </div>
+    </section>
 
-<section class="section" id="categoriesSection"><div class="container">
-  <div class="section-title"><h2>Explora nuestras categorías</h2><a href="#" id="allCategories">Ver todas →</a></div>
-  <div class="categories">
-    <div class="category" data-category="Herramientas"><div class="category-image img-tools"></div><h3>🔨 Herramientas</h3></div>
-    <div class="category" data-category="Material eléctrico"><div class="category-image img-electric"></div><h3>⚡ Material eléctrico</h3></div>
-    <div class="category" data-category="Ferretería"><div class="category-image img-hardware"></div><h3>🔩 Ferretería</h3></div>
-    <div class="category" data-category="Equipos"><div class="category-image img-equipment"></div><h3>🧰 Equipos</h3></div>
-    <div class="category" data-category="Seguridad"><div class="category-image img-safety"></div><h3>🦺 Seguridad industrial</h3></div>
-    <div class="category" data-category="Construcción"><div class="category-image img-construction"></div><h3>🏗️ Construcción</h3></div>
-  </div>
-</div></section>
+    <section class="section benefits-section" id="nosotros" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">SOBRE NOSOTROS</p>
+          <h2 id="about-title">Tu aliado para cada proyecto.</h2>
+          <p>En FERRELECTRICOS J.G.D buscamos facilitar el acceso a productos de ferretería, herramientas y materiales eléctricos para clientes particulares y negocios.</p>
+          <p>Esta plataforma presenta un catálogo organizado y una experiencia de navegación sencilla para encontrar productos y enviar solicitudes de información.</p>
+        </div>
+        <div class="feature-list">
+          <article class="feature-card"><span aria-hidden="true">🧰</span><div><h3>Variedad</h3><p>Productos organizados por categorías.</p></div></article>
+          <article class="feature-card"><span aria-hidden="true">🔎</span><div><h3>Búsqueda sencilla</h3><p>Encuentra artículos por su nombre o categoría.</p></div></article>
+          <article class="feature-card"><span aria-hidden="true">💬</span><div><h3>Atención directa</h3><p>Envíanos tus preguntas mediante el formulario.</p></div></article>
+        </div>
+      </div>
+    </section>
 
-<section class="section"><div class="container"><div class="benefits">
-  <div class="benefit"><div class="benefit-icon">🚚</div><div><h3>Envíos rápidos</h3><p>Recibe tus productos directamente en tu dirección.</p></div></div>
-  <div class="benefit"><div class="benefit-icon">🔒</div><div><h3>Compra segura</h3><p>Protegemos tus datos y tus compras.</p></div></div>
-  <div class="benefit"><div class="benefit-icon">💳</div><div><h3>Pagos en línea</h3><p>Diferentes medios de pago disponibles.</p></div></div>
-  <div class="benefit"><div class="benefit-icon">📞</div><div><h3>Atención personalizada</h3><p>Estamos disponibles para ayudarte.</p></div></div>
-</div></div></section>
+    <section class="section container" id="carrito" aria-labelledby="cart-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">TU SELECCIÓN</p><h2 id="cart-title">Carrito de compras</h2></div>
+        <button class="button button-small button-outline" id="clearCart" type="button">Vaciar carrito</button>
+      </div>
+      <div class="cart-panel">
+        <div id="cartItems" aria-live="polite"><p class="empty-cart">Tu carrito está vacío. Explora el catálogo para agregar productos.</p></div>
+        <div class="cart-summary">
+          <span>Total estimado</span><strong id="cartTotal">$ 0</strong>
+          <p class="fine-print">Prototipo académico: los precios y productos son de ejemplo. No se procesa ningún pago.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="section" id="productsSection"><div class="container">
-  <div class="section-title"><h2>Productos destacados</h2><a href="#" id="showAll">Ver catálogo →</a></div>
-  <div class="products" id="products"></div>
-</div></section>
+    <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">HABLEMOS</p>
+          <h2 id="contact-title">¿En qué podemos ayudarte?</h2>
+          <p>Completa el formulario y cuéntanos qué producto o información necesitas. Los campos marcados con * son obligatorios.</p>
+          <div class="contact-note"><span aria-hidden="true">✉</span><p><strong>Solicitud de información</strong><br>El formulario mostrará una confirmación en esta página.</p></div>
+        </div>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fullName">Nombre completo *</label>
+              <input id="fullName" name="fullName" type="text" autocomplete="name" minlength="3" maxlength="80" required aria-describedby="nameError">
+              <small class="field-error" id="nameError"></small>
+            </div>
+            <div class="form-field">
+              <label for="email">Correo electrónico *</label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required aria-describedby="emailError">
+              <small class="field-error" id="emailError"></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Teléfono *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Ej. 3001234567" required aria-describedby="phoneError">
+              <small class="field-error" id="phoneError"></small>
+            </div>
+            <div class="form-field">
+              <label for="reason">Motivo de contacto *</label>
+              <select id="reason" name="reason" required aria-describedby="reasonError">
+                <option value="">Selecciona una opción</option>
+                <option value="Consulta de producto">Consulta de producto</option>
+                <option value="Cotización">Cotización</option>
+                <option value="Pedido">Información sobre un pedido</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <small class="field-error" id="reasonError"></small>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensaje *</label>
+            <textarea id="message" name="message" rows="5" minlength="10" maxlength="1000" placeholder="Cuéntanos qué necesitas (mínimo 10 caracteres)." required aria-describedby="messageError"></textarea>
+            <small class="field-error" id="messageError"></small>
+          </div>
+          <div class="form-field checkbox-field">
+            <input id="privacy" name="privacy" type="checkbox" required aria-describedby="privacyError">
+            <label for="privacy">Confirmo que los datos ingresados son correctos y autorizo su uso para responder esta solicitud. *</label>
+          </div>
+          <small class="field-error" id="privacyError"></small>
+          <button class="button button-primary submit-button" type="submit">Validar y enviar solicitud</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="fine-print">Este prototipo valida los datos en el navegador. Para recibir mensajes reales se necesita conectar el formulario a un servidor o servicio autorizado.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-<section class="section" id="cartSection"><div class="container">
-  <div class="section-title"><h2>🛒 Mi carrito</h2></div>
-  <div class="cart" id="cart"></div>
-</div></section>
-
-<section class="section" id="ordersSection"><div class="container">
-  <div class="section-title"><h2>📦 Mis pedidos</h2></div>
-  <div class="order-section" id="orders"></div>
-</div></section>
-
-<section class="section"><div class="container">
-  <div class="section-title"><h2>⭐ Lo que dicen nuestros clientes</h2></div>
-  <div class="reviews">
-    <div class="review"><div class="review-user"><div class="avatar"></div><div><strong>Carlos Martínez</strong><div class="stars">★★★★★</div></div></div><p>"Encontré fácilmente las herramientas que necesitaba y el pedido llegó en el tiempo indicado."</p></div>
-    <div class="review"><div class="review-user"><div class="avatar"></div><div><strong>Andrea Rodríguez</strong><div class="stars">★★★★★</div></div></div><p>"La página es muy fácil de utilizar. Pude comparar los productos y realizar mi compra sin problemas."</p></div>
-    <div class="review"><div class="review-user"><div class="avatar"></div><div><strong>Juan Pérez</strong><div class="stars">★★★★☆</div></div></div><p>"Muy buena atención y variedad de productos. El seguimiento del pedido fue bastante útil."</p></div>
-  </div>
-</div></section>
-
-<section class="section"><div class="container"><div class="contact">
-  <div class="contact-box"><h2>¿Necesitas ayuda?</h2><p>📞 +57 300 000 0000</p><p>📧 contacto@ferrelectricosjgd.com</p><p>📍 Bogotá D.C., Colombia</p></div>
-  <div class="contact-box"><h2>Contáctanos</h2><input type="text" placeholder="Nombre"><input type="email" placeholder="Correo electrónico"><textarea placeholder="Escribe tu mensaje..."></textarea><button class="btn btn-primary" id="contactBtn">Enviar mensaje</button></div>
-</div></div></section>
-
-<footer><div class="footer-grid"><div><h3>FERRELECTRICOS J.G.D.</h3><p>Soluciones para ferretería, construcción y proyectos eléctricos.</p></div><div><h3>Información</h3><p>Sobre nosotros</p><p>Términos y condiciones</p><p>Política de privacidad</p></div><div><h3>Servicio al cliente</h3><p>Preguntas frecuentes</p><p>Envíos</p><p>Devoluciones</p><p>Seguimiento de pedidos</p></div><div><h3>Síguenos</h3><p>Facebook</p><p>Instagram</p><p>WhatsApp</p></div></div><div class="copyright">© 2026 FERRELECTRICOS J.G.D. Todos los derechos reservados.</div></footer>
-
-<div id="notification"></div>
-<script src="js/app.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand brand-footer" href="#inicio"><span class="brand-mark" aria-hidden="true">JGD</span><span class="brand-text"><strong>FERRELECTRICOS J.G.D</strong><small>Soluciones para tus proyectos</small></span></a>
+      <p>© <span id="currentYear"></span> FERRELECTRICOS J.G.D. Proyecto académico.</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
